@@ -9,7 +9,7 @@ namespace Unit06.Game.Casting
         private Animation _animation;
 
         /// <summary>
-        /// Constructs a new instance of Actor.
+        /// Constructs our instance of Mario
         /// </summary>
         public Mario(Body body, Animation animation, bool debug) : base(debug)
         {
@@ -51,7 +51,7 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void SwingLeft()
         {
-            Point velocity = new Point(-Constants.RACKET_VELOCITY, 0);
+            Point velocity = new Point(-Constants.PLUMBER_VELOCITY, 0);
             _body.SetVelocity(velocity);
         }
 
@@ -60,7 +60,7 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void SwingRight()
         {
-            Point velocity = new Point(Constants.RACKET_VELOCITY, 0);
+            Point velocity = new Point(Constants.PLUMBER_VELOCITY, 0);
             _body.SetVelocity(velocity);
         }
 

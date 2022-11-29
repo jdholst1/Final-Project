@@ -95,34 +95,36 @@ namespace Unit06
         public static string LIVES_FORMAT = "LIVES: {0}";
         public static string SCORE_FORMAT = "SCORE: {0}{1}";
 
-        // BALL
-        public static string BALL_GROUP = "balls";
-        public static string BALL_IMAGE = "Assets/Images/000.png";
-        public static int BALL_WIDTH = 28;
-        public static int BALL_HEIGHT = 28;
-        public static int BALL_VELOCITY = 6;
+        // // BALL
+        // public static string BALL_GROUP = "balls";
+        // public static string BALL_IMAGE = "Assets/Images/000.png";
+        // public static int BALL_WIDTH = 28;
+        // public static int BALL_HEIGHT = 28;
+        // public static int BALL_VELOCITY = 6;
 
-        // RACKET
-        public static string RACKET_GROUP = "rackets";
+        // MARIO
+        public static string PLUMBER_GROUP = "plumbers";
 
-        public static List<string> RACKET_IMAGES
+        public static List<string> MARIO_IMAGES
             = new List<string>() {
                 "Assets/Images/100.png",
                 "Assets/Images/101.png",
                 "Assets/Images/102.png"
             };
 
-        public static int RACKET_WIDTH = 106;
-        public static int RACKET_HEIGHT = 28;
-        public static int RACKET_RATE = 6;
-        public static int RACKET_VELOCITY = 7;
+        public static int PLUMBER_WIDTH = 100;
+        public static int PLUMBER_HEIGHT = 28;
+        public static int PLUMBER_RATE = 6;
+        public static int PLUMBER_VELOCITY = 7;
 
         // BRICK
         public static string BRICK_GROUP = "bricks";
 
+
         public static Dictionary<string, List<string>> BRICK_IMAGES
             = new Dictionary<string, List<string>>() {
-                { "b", new List<string>() {
+                //Null Space
+                { "s", new List<string>() {
                     "Assets/Images/010.png",
                     "Assets/Images/011.png",
                     "Assets/Images/012.png",
@@ -133,6 +135,7 @@ namespace Unit06
                     "Assets/Images/017.png",
                     "Assets/Images/018.png"
                 } },
+                //Ground
                 { "g", new List<string>() {
                     "Assets/Images/020.png",
                     "Assets/Images/021.png",
@@ -144,7 +147,8 @@ namespace Unit06
                     "Assets/Images/027.png",
                     "Assets/Images/028.png"
                 } },
-                { "p", new List<string>() {
+                //bricks
+                { "b", new List<string>() {
                     "Assets/Images/030.png",
                     "Assets/Images/031.png",
                     "Assets/Images/032.png",
@@ -155,7 +159,8 @@ namespace Unit06
                     "Assets/Images/037.png",
                     "Assets/Images/038.png"
                 } },
-                { "y", new List<string>() {
+                //?blocks
+                { "bl", new List<string>() {
                     "Assets/Images/040.png",
                     "Assets/Images/041.png",
                     "Assets/Images/042.png",
@@ -168,8 +173,8 @@ namespace Unit06
                 } }
         };
 
-        public static int BRICK_WIDTH = 80;
-        public static int BRICK_HEIGHT = 28;
+        public static int BRICK_WIDTH = 30;
+        public static int BRICK_HEIGHT = 30;
         public static double BRICK_DELAY = 0.5;
         public static int BRICK_RATE = 4;
         public static int BRICK_POINTS = 50;
@@ -177,7 +182,7 @@ namespace Unit06
         // DIALOG
         public static string DIALOG_GROUP = "dialogs";
         public static string ENTER_TO_START = "PRESS ENTER TO START";
-        public static string PREP_TO_LAUNCH = "PREPARING TO LAUNCH";
+        public static string PREP_TO_LAUNCH = "Let's-a-go!";
         public static string WAS_GOOD_GAME = "GAME OVER";
 
     }

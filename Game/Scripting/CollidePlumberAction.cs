@@ -4,12 +4,12 @@ using Unit06.Game.Services;
 
 namespace Unit06.Game.Scripting
 {
-    public class CollidePlumberumberAction : Action
+    public class CollideplAction : Action
     {
         private AudioService _audioService;
         private PhysicsService _physicsService;
 
-        public CollidePlumberAction(PhysicsService physicsService, AudioService audioService)
+        public CollideRacketAction(PhysicsService physicsService, AudioService audioService)
         {
             this._physicsService = physicsService;
             this._audioService = audioService;

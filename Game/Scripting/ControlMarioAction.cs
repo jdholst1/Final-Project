@@ -15,18 +15,18 @@ namespace Unit06.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Racket racket = (Racket)cast.GetFirstActor(Constants.RACKET_GROUP);
+            Mario mario = (Mario)cast.GetFirstActor(Constants.PLUMBER_GROUP);
             if (_keyboardService.IsKeyDown(Constants.LEFT))
             {
-                racket.SwingLeft();
+                mario.SwingLeft();
             }
             else if (_keyboardService.IsKeyDown(Constants.RIGHT))
             {
-                racket.SwingRight();
+                mario.SwingRight();
             }
             else
             {
-                racket.StopMoving();
+                mario.StopMoving();
             }
         }
     }

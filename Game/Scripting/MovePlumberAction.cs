@@ -2,16 +2,16 @@ using Unit06.Game.Casting;
 
 namespace Unit06.Game.Scripting
 {
-    public class MoveRacketAction : Action
+    public class MovePlumberAction : Action
     {
-        public MoveRacketAction()
+        public MovePlumberAction()
         {
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Racket racket = (Racket)cast.GetFirstActor(Constants.RACKET_GROUP);
-            Body body = racket.GetBody();
+            Mario mario = (Mario)cast.GetFirstActor(Constants.PLUMBER_GROUP);
+            Body body = mario.GetBody();
             Point position = body.GetPosition();
             Point velocity = body.GetVelocity();
             int x = position.GetX();
@@ -21,13 +21,13 @@ namespace Unit06.Game.Scripting
             {
                 position = new Point(0, position.GetY());
             }
-            else if (x > Constants.SCREEN_WIDTH - Constants.RACKET_WIDTH)
+            else if (x > Constants.SCREEN_WIDTH - Constants.PLUMBER_WIDTH)
             {
-                position = new Point(Constants.SCREEN_WIDTH - Constants.RACKET_WIDTH, 
+                position = new Point(Constants.SCREEN_WIDTH - Constants.PLUMBER_WIDTH,
                     position.GetY());
             }
 
-            body.SetPosition(position);       
+            body.SetPosition(position);
         }
     }
 }

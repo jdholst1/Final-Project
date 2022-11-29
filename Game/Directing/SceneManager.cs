@@ -51,9 +51,9 @@ namespace Unit06.Game.Directing
             AddLevel(cast);
             AddScore(cast);
             AddLives(cast);
-            AddBall(cast);
+            // AddBall(cast);
             AddBricks(cast);
-            AddRacket(cast);
+            AddMario(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
 
             script.ClearAllActions();
@@ -68,17 +68,17 @@ namespace Unit06.Game.Directing
             AddReleaseActions(script);
         }
 
-        private void ActivateBall(Cast cast)
-        {
-            Ball ball = (Ball)cast.GetFirstActor(Constants.BALL_GROUP);
-            ball.Release();
-        }
+        // private void ActivatePlumber(Cast cast)
+        // {
+        //     Mario mario = (Mario)cast.GetFirstActor(Constants.PLUMBER_GROUP);
+        //     // mario.Release();
+        // }
 
         private void PrepareNextLevel(Cast cast, Script script)
         {
-            AddBall(cast);
+            // AddBall(cast);
             AddBricks(cast);
-            AddRacket(cast);
+            AddMario(cast);
             AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
             script.ClearAllActions();
@@ -94,22 +94,22 @@ namespace Unit06.Game.Directing
 
         private void PrepareTryAgain(Cast cast, Script script)
         {
-            AddBall(cast);
-            AddRacket(cast);
+            // AddBall(cast);
+            AddMario(cast);
             AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
             script.ClearAllActions();
-            
+
             TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
             script.AddAction(Constants.INPUT, ta);
-            
+
             AddUpdateActions(script);
             AddOutputActions(script);
         }
 
         private void PrepareInPlay(Cast cast, Script script)
         {
-            ActivateBall(cast);
+            // ActivatePlumber(cast);
             cast.ClearActors(Constants.DIALOG_GROUP);
 
             script.ClearAllActions();
@@ -117,15 +117,15 @@ namespace Unit06.Game.Directing
             ControlRacketAction action = new ControlRacketAction(KeyboardService);
             script.AddAction(Constants.INPUT, action);
 
-            AddUpdateActions(script);    
+            AddUpdateActions(script);
             AddOutputActions(script);
-        
+
         }
 
         private void PrepareGameOver(Cast cast, Script script)
         {
-            AddBall(cast);
-            AddRacket(cast);
+            // AddBall(cast);
+            AddMario(cast);
             AddDialog(cast, Constants.WAS_GOOD_GAME);
 
             script.ClearAllActions();
@@ -140,23 +140,23 @@ namespace Unit06.Game.Directing
         // casting methods
         // -----------------------------------------------------------------------------------------
 
-        private void AddBall(Cast cast)
-        {
-            cast.ClearActors(Constants.BALL_GROUP);
-        
-            int x = Constants.CENTER_X - Constants.BALL_WIDTH / 2;
-            int y = Constants.SCREEN_HEIGHT - Constants.RACKET_HEIGHT - Constants.BALL_HEIGHT;
-        
-            Point position = new Point(x, y);
-            Point size = new Point(Constants.BALL_WIDTH, Constants.BALL_HEIGHT);
-            Point velocity = new Point(0, 0);
-        
-            Body body = new Body(position, size, velocity);
-            Image image = new Image(Constants.BALL_IMAGE);
-            Ball ball = new Ball(body, image, false);
-        
-            cast.AddActor(Constants.BALL_GROUP, ball);
-        }
+        // private void AddBall(Cast cast)
+        // {
+        //     cast.ClearActors(Constants.BALL_GROUP);
+
+        //     int x = Constants.CENTER_X - Constants.BALL_WIDTH / 2;
+        //     int y = Constants.SCREEN_HEIGHT - Constants.RACKET_HEIGHT - Constants.BALL_HEIGHT;
+
+        //     Point position = new Point(x, y);
+        //     Point size = new Point(Constants.BALL_WIDTH, Constants.BALL_HEIGHT);
+        //     Point velocity = new Point(0, 0);
+
+        //     Body body = new Body(position, size, velocity);
+        //     Image image = new Image(Constants.BALL_IMAGE);
+        //     Ball ball = new Ball(body, image, false);
+
+        //     cast.AddActor(Constants.BALL_GROUP, ball);
+        // }
 
         private void AddBricks(Cast cast)
         {
@@ -185,7 +185,7 @@ namespace Unit06.Game.Directing
 
                     Body body = new Body(position, size, velocity);
                     Animation animation = new Animation(images, Constants.BRICK_RATE, 1);
-                    
+
                     Brick brick = new Brick(body, animation, points, false);
                     cast.AddActor(Constants.BRICK_GROUP, brick);
                 }
@@ -196,19 +196,19 @@ namespace Unit06.Game.Directing
         {
             cast.ClearActors(Constants.DIALOG_GROUP);
 
-            Text text = new Text(message, Constants.FONT_FILE, Constants.FONT_SIZE, 
+            Text text = new Text(message, Constants.FONT_FILE, Constants.FONT_SIZE,
                 Constants.ALIGN_CENTER, Constants.WHITE);
             Point position = new Point(Constants.CENTER_X, Constants.CENTER_Y);
 
             Label label = new Label(text, position);
-            cast.AddActor(Constants.DIALOG_GROUP, label);   
+            cast.AddActor(Constants.DIALOG_GROUP, label);
         }
 
         private void AddLevel(Cast cast)
         {
             cast.ClearActors(Constants.LEVEL_GROUP);
 
-            Text text = new Text(Constants.LEVEL_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
+            Text text = new Text(Constants.LEVEL_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE,
                 Constants.ALIGN_LEFT, Constants.WHITE);
             Point position = new Point(Constants.HUD_MARGIN, Constants.HUD_MARGIN);
 
@@ -220,43 +220,43 @@ namespace Unit06.Game.Directing
         {
             cast.ClearActors(Constants.LIVES_GROUP);
 
-            Text text = new Text(Constants.LIVES_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
+            Text text = new Text(Constants.LIVES_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE,
                 Constants.ALIGN_RIGHT, Constants.WHITE);
-            Point position = new Point(Constants.SCREEN_WIDTH - Constants.HUD_MARGIN, 
+            Point position = new Point(Constants.SCREEN_WIDTH - Constants.HUD_MARGIN,
                 Constants.HUD_MARGIN);
 
             Label label = new Label(text, position);
-            cast.AddActor(Constants.LIVES_GROUP, label);   
+            cast.AddActor(Constants.LIVES_GROUP, label);
         }
 
-        private void AddRacket(Cast cast)
+        private void AddMario(Cast cast)
         {
-            cast.ClearActors(Constants.RACKET_GROUP);
-        
-            int x = Constants.CENTER_X - Constants.RACKET_WIDTH / 2;
-            int y = Constants.SCREEN_HEIGHT - Constants.RACKET_HEIGHT;
-        
+            cast.ClearActors(Constants.PLUMBER_GROUP);
+
+            int x = Constants.CENTER_X - Constants.PLUMBER_WIDTH / 2;
+            int y = Constants.SCREEN_HEIGHT - Constants.PLUMBER_HEIGHT;
+
             Point position = new Point(x, y);
-            Point size = new Point(Constants.RACKET_WIDTH, Constants.RACKET_HEIGHT);
+            Point size = new Point(Constants.PLUMBER_WIDTH, Constants.PLUMBER_HEIGHT);
             Point velocity = new Point(0, 0);
-        
+
             Body body = new Body(position, size, velocity);
-            Animation animation = new Animation(Constants.RACKET_IMAGES, Constants.RACKET_RATE, 0);
-            Racket racket = new Racket(body, animation, false);
-        
-            cast.AddActor(Constants.RACKET_GROUP, racket);
+            Animation animation = new Animation(Constants.MARIO_IMAGES, Constants.PLUMBER_RATE, 0);
+            Mario mario = new Mario(body, animation, false);
+
+            cast.AddActor(Constants.PLUMBER_GROUP, mario);
         }
 
         private void AddScore(Cast cast)
         {
             cast.ClearActors(Constants.SCORE_GROUP);
 
-            Text text = new Text(Constants.SCORE_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
+            Text text = new Text(Constants.SCORE_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE,
                 Constants.ALIGN_CENTER, Constants.WHITE);
             Point position = new Point(Constants.CENTER_X, Constants.HUD_MARGIN);
-            
+
             Label label = new Label(text, position);
-            cast.AddActor(Constants.SCORE_GROUP, label);   
+            cast.AddActor(Constants.SCORE_GROUP, label);
         }
 
         private void AddStats(Cast cast)
@@ -269,7 +269,7 @@ namespace Unit06.Game.Directing
         private List<List<string>> LoadLevel(string filename)
         {
             List<List<string>> data = new List<List<string>>();
-            using(StreamReader reader = new StreamReader(filename))
+            using (StreamReader reader = new StreamReader(filename))
             {
                 while (!reader.EndOfStream)
                 {
@@ -287,7 +287,7 @@ namespace Unit06.Game.Directing
 
         private void AddInitActions(Script script)
         {
-            script.AddAction(Constants.INITIALIZE, new InitializeDevicesAction(AudioService, 
+            script.AddAction(Constants.INITIALIZE, new InitializeDevicesAction(AudioService,
                 VideoService));
         }
 
@@ -300,7 +300,7 @@ namespace Unit06.Game.Directing
         {
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawBallAction(VideoService));
+            //script.AddAction(Constants.OUTPUT, new DrawBallAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawBricksAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawRacketAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
@@ -314,18 +314,18 @@ namespace Unit06.Game.Directing
 
         private void AddReleaseActions(Script script)
         {
-            script.AddAction(Constants.RELEASE, new ReleaseDevicesAction(AudioService, 
+            script.AddAction(Constants.RELEASE, new ReleaseDevicesAction(AudioService,
                 VideoService));
         }
 
         private void AddUpdateActions(Script script)
         {
-            script.AddAction(Constants.UPDATE, new MoveBallAction());
-            script.AddAction(Constants.UPDATE, new MoveRacketAction());
-            script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
+            //script.AddAction(Constants.UPDATE, new MoveBallAction());
+            script.AddAction(Constants.UPDATE, new MovePlumberAction());
+            // script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
-            script.AddAction(Constants.UPDATE, new CollideRacketAction(PhysicsService, AudioService));
-            script.AddAction(Constants.UPDATE, new CheckOverAction());     
+            script.AddAction(Constants.UPDATE, new CollidePlumberAction(PhysicsService, AudioService));
+            script.AddAction(Constants.UPDATE, new CheckOverAction());
         }
     }
 }
