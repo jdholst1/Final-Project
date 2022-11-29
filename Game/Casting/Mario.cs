@@ -3,15 +3,15 @@ namespace Unit06.Game.Casting
     /// <summary>
     /// A thing that participates in the game.
     /// </summary>
-    public class Racket : Actor
+    public class Mario : Actor
     {
         private Body _body;
         private Animation _animation;
-        
+
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Racket(Body body, Animation animation, bool debug) : base(debug)
+        public Mario(Body body, Animation animation, bool debug) : base(debug)
         {
             this._body = body;
             this._animation = animation;
@@ -72,6 +72,6 @@ namespace Unit06.Game.Casting
             Point velocity = new Point(0, 0);
             _body.SetVelocity(velocity);
         }
-        
+
     }
 }
