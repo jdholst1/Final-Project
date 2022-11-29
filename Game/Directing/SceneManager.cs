@@ -114,7 +114,7 @@ namespace Unit06.Game.Directing
 
             script.ClearAllActions();
 
-            ControlRacketAction action = new ControlRacketAction(KeyboardService);
+            ControlPlumberAction action = new ControlPlumberAction(KeyboardService);
             script.AddAction(Constants.INPUT, action);
 
             AddUpdateActions(script);

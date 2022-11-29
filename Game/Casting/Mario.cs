@@ -36,7 +36,7 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Moves the racket to its next position.
+        /// Moves Mario to his next position.
         /// </summary>
         public void MoveNext()
         {
@@ -47,25 +47,25 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Swings the racket to the left.
+        /// Moves Mario to the left.
         /// </summary>
-        public void SwingLeft()
+        public void MoveLeft()
         {
-            Point velocity = new Point(-Constants.PLUMBER_VELOCITY, 0);
+            Point velocity = new Point(-Constants.PLUMBER_SPEED, 0);
             _body.SetVelocity(velocity);
         }
 
         /// <summary>
-        /// Swings the racket to the right.
+        /// Moves Mario to the right.
         /// </summary>
-        public void SwingRight()
+        public void MoveRight()
         {
-            Point velocity = new Point(Constants.PLUMBER_VELOCITY, 0);
+            Point velocity = new Point(Constants.PLUMBER_SPEED, 0);
             _body.SetVelocity(velocity);
         }
 
         /// <summary>
-        /// Stops the racket from moving.
+        /// Stops Mario from moving.
         /// </summary>
         public void StopMoving()
         {

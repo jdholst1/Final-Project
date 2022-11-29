@@ -4,12 +4,12 @@ using Unit06.Game.Services;
 
 namespace Unit06.Game.Scripting
 {
-    public class CollideplAction : Action
+    public class CollidePlumberAction : Action
     {
         private AudioService _audioService;
         private PhysicsService _physicsService;
 
-        public CollideRacketAction(PhysicsService physicsService, AudioService audioService)
+        public CollidePlumberAction(PhysicsService physicsService, AudioService audioService)
         {
             this._physicsService = physicsService;
             this._audioService = audioService;
@@ -20,7 +20,7 @@ namespace Unit06.Game.Scripting
             //Ball ball = (Ball)cast.GetFirstActor(Constants.BALL_GROUP);
             Mario mario = (Mario)cast.GetFirstActor(Constants.PLUMBER_GROUP);
             //Body ballBody = ball.GetBody();
-            Body racketBody = mario.GetBody();
+            Body plumberBody = mario.GetBody();
 
             // if (_physicsService.HasCollided(racketBody, ballBody))
             // {

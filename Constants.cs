@@ -115,7 +115,7 @@ namespace Unit06
         public static int PLUMBER_WIDTH = 100;
         public static int PLUMBER_HEIGHT = 28;
         public static int PLUMBER_RATE = 6;
-        public static int PLUMBER_VELOCITY = 7;
+        public static int PLUMBER_SPEED = 7;
 
         // BRICK
         public static string BRICK_GROUP = "bricks";

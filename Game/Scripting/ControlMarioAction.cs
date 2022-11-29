@@ -4,11 +4,11 @@ using Unit06.Game.Services;
 
 namespace Unit06.Game.Scripting
 {
-    public class ControlRacketAction : Action
+    public class ControlPlumberAction : Action
     {
         private KeyboardService _keyboardService;
 
-        public ControlRacketAction(KeyboardService keyboardService)
+        public ControlPlumberAction(KeyboardService keyboardService)
         {
             this._keyboardService = keyboardService;
         }
@@ -18,11 +18,11 @@ namespace Unit06.Game.Scripting
             Mario mario = (Mario)cast.GetFirstActor(Constants.PLUMBER_GROUP);
             if (_keyboardService.IsKeyDown(Constants.LEFT))
             {
-                mario.SwingLeft();
+                mario.MoveLeft();
             }
             else if (_keyboardService.IsKeyDown(Constants.RIGHT))
             {
-                mario.SwingRight();
+                mario.MoveRight();
             }
             else
             {
