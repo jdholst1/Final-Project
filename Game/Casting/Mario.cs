@@ -51,7 +51,7 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void MoveLeft()
         {
-            Point velocity = new Point(-Constants.PLUMBER_SPEED, 0);
+            Point velocity = new Point(-Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
             _body.SetVelocity(velocity);
         }
 
@@ -60,7 +60,9 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void MoveRight()
         {
-            Point velocity = new Point(Constants.PLUMBER_SPEED, 0);
+            // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
+            Point velocity = _body.GetVelocity();
+            velocity = velocity.AddValues(Constants.PLUMBER_SPEED, 0);
             _body.SetVelocity(velocity);
         }
 

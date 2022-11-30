@@ -34,6 +34,18 @@ namespace Unit06.Game.Casting
             int y = this._y + other.GetY();
             return new Point(x, y);
         }
+        /// <summary>
+        /// Adds the given values to the point by summing the x and y values.
+        /// </summary>
+        /// <param name="other">The point to add.</param>
+        /// <returns>The sum as a new Point.</returns>
+        public Point AddValues(int add_x, int add_y)
+        {
+            int x = this._x + add_x;
+            int y = this._y + add_y;
+            return new Point(x, y);
+        }
+
 
         /// <summary>
         /// Whether or not this Point is equal to the given one.
@@ -73,7 +85,7 @@ namespace Unit06.Game.Casting
             int y = this._y * -1;
             return new Point(x, y);
         }
-        
+
         /// <summary>
         /// Scales the point by multiplying the x and y values by the provided factor.
         /// </summary>

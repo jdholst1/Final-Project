@@ -22,7 +22,7 @@ namespace Unit06.Game.Scripting
             //Body ballBody = ball.GetBody();
             Body plumberBody = mario.GetBody();
 
-            // if (_physicsService.HasCollided(racketBody, ballBody))
+            // if (_physicsService.HasCollided(marioBody, brickBody))
             // {
             //     ball.BounceY();
             //     Sound sound = new Sound(Constants.BOUNCE_SOUND);

@@ -302,7 +302,7 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             //script.AddAction(Constants.OUTPUT, new DrawBallAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawBricksAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawRacketAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawPlumberAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
