@@ -7,6 +7,7 @@ namespace Unit06.Game.Casting
     {
         private Body _body;
         private Animation _animation;
+        private bool _isGrounded;
 
         /// <summary>
         /// Constructs our instance of Mario
@@ -51,7 +52,9 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void MoveLeft()
         {
-            Point velocity = new Point(-Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
+            Point velocity = _body.GetVelocity();
+            velocity = velocity.AddValues(-Constants.PLUMBER_SPEED, 0);
+            velocity.Friction_x();
             _body.SetVelocity(velocity);
         }
 
@@ -63,15 +66,27 @@ namespace Unit06.Game.Casting
             // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
             Point velocity = _body.GetVelocity();
             velocity = velocity.AddValues(Constants.PLUMBER_SPEED, 0);
+            velocity.Friction_x();
             _body.SetVelocity(velocity);
         }
 
         /// <summary>
-        /// Stops Mario from moving.
+        /// Stops Mario from moving in a specified direction.
         /// </summary>
-        public void StopMoving()
+        /// 
+        public void StopMoving(bool x, bool y)
         {
-            Point velocity = new Point(0, 0);
+            int new_x = _body.GetVelocity().GetX();
+            int new_y = _body.GetVelocity().GetY();
+            if (x)
+            {
+                new_x = 0;
+            }
+            if (y)
+            {
+                new_y = 0;
+            }
+            Point velocity = new Point(new_x, new_y);
             _body.SetVelocity(velocity);
         }
 

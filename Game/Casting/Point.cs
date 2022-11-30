@@ -1,3 +1,4 @@
+using System;
 namespace Unit06.Game.Casting
 {
     /// <summary>
@@ -46,6 +47,16 @@ namespace Unit06.Game.Casting
             return new Point(x, y);
         }
 
+        /// <summary>
+        /// Adds the given point to this one by summing the x and y values.
+        /// </summary>
+        /// <param name="other">The point to add.</param>
+        /// <returns>The sum as a new Point.</returns>
+        public void Friction_x()
+        {
+            this._x = this._x / 2;
+        }
+
 
         /// <summary>
         /// Whether or not this Point is equal to the given one.
@@ -91,10 +102,18 @@ namespace Unit06.Game.Casting
         /// </summary>
         /// <param name="factor">The scaling factor.</param>
         /// <returns>A scaled instance of Point.</returns>
-        public Point Scale(int factor)
+        public Point Scale(int factor, bool change_x, bool change_y)
         {
-            int x = this._x * factor;
-            int y = this._y * factor;
+            int x = this._x;
+            int y = this._y;
+            if (change_x)
+            {
+                x = this._x * factor;
+            }
+            if (change_y)
+            {
+                y = this._y * factor;
+            }
             return new Point(x, y);
         }
     }
