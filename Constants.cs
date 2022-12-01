@@ -107,9 +107,9 @@ namespace Unit06
 
         public static List<string> MARIO_IMAGES
             = new List<string>() {
-                "Assets/Images/100.png",
-                "Assets/Images/101.png",
-                "Assets/Images/102.png"
+                "Assets/Images/guido01.png",
+                "Assets/Images/guido02.png",
+                "Assets/Images/guido03.png"
             };
 
         public static int PLUMBER_WIDTH = 100;
@@ -125,11 +125,11 @@ namespace Unit06
             = new Dictionary<string, List<string>>() {
                 //Null Space
                 { "s", new List<string>() {
-                    "Assets/Images/special_block00.png"
+                    "Assets/Images/special_block01.png"
                 } },
                 //Ground
                 { "g", new List<string>() {
-                    "Assets/Images/special_block00.png"
+                    "Assets/Images/special_block01.png"
                 } },
                 //bricks
                 { "b", new List<string>() {
@@ -137,7 +137,7 @@ namespace Unit06
                 } },
                 //?blocks
                 { "bl", new List<string>() {
-                    "Assets/Images/special_block00.png"
+                    "Assets/Images/special_block01.png"
                 } }
         };
 
