@@ -26,3 +26,4 @@ Mario: the plumber himself
 - StopMoving(): sets Mario's velocity to 0 in both directions
 
 
+Crediting me: If you use "My Friends Will Cry", please make the credit attribution as follows: "Music by Christovix Games"

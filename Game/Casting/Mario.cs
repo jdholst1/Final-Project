@@ -56,7 +56,7 @@ namespace Unit06.Game.Casting
         {
             Point velocity = _body.GetVelocity();
             velocity = velocity.AddValues(-Constants.PLUMBER_SPEED, 0);
-            velocity.Friction_x();
+            // velocity.Friction_x();
             _body.SetVelocity(velocity);
         }
 
@@ -68,12 +68,12 @@ namespace Unit06.Game.Casting
             // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
             Point velocity = _body.GetVelocity();
             velocity = velocity.AddValues(Constants.PLUMBER_SPEED, 0);
-            velocity.Friction_x();
+            // velocity.Friction_x();
             _body.SetVelocity(velocity);
         }
 
         /// <summary>
-        /// Moves Mario to the right.
+        /// Makes Mario bounce if he's on the ground.
         /// </summary>
         public void Bounce()
         {
@@ -82,14 +82,15 @@ namespace Unit06.Game.Casting
             velocity = velocity.AddValues(0, Constants.PLUMBER_SPEED);
             _body.SetVelocity(velocity);
         }
+
         /// <summary>
-        /// Moves Mario to the right.
+        /// Makes Mario duck (quack).
         /// </summary>
         public void Duck()
         {
             // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
             Point velocity = _body.GetVelocity();
-            velocity = velocity.AddValues(0, -Constants.PLUMBER_SPEED);
+            velocity = velocity.AddValues(0, -(Constants.PLUMBER_SPEED));
             _body.SetVelocity(velocity);
         }
 
@@ -102,16 +103,20 @@ namespace Unit06.Game.Casting
         {
             int new_x = _body.GetVelocity().GetX();
             int new_y = _body.GetVelocity().GetY();
-            if (x)
-            {
-                new_x = 0;
-            }
-            if (y)
-            {
-                new_y = 0;
-            }
-            Point velocity = new Point(new_x, new_y);
+
+            // if (x)
+            // {
+            //     new_x = 0;
+            // }
+            // if (y)
+            // {
+            //     new_y = 0;
+            // }
+            Point velocity = _body.GetVelocity();
+            velocity = velocity.Friction_x(velocity.GetX(), velocity.GetY());
             _body.SetVelocity(velocity);
+
+
         }
 
     }

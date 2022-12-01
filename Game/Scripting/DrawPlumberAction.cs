@@ -20,6 +20,7 @@ namespace Unit06.Game.Scripting
 
             if (mario.IsDebug())
             {
+                // mario.MoveNext();
                 Rectangle rectangle = body.GetRectangle();
                 Point size = rectangle.GetSize();
                 Point pos = rectangle.GetPosition();

@@ -43,18 +43,20 @@ namespace Unit06.Game.Casting
         public Point AddValues(int add_x, int add_y)
         {
             int x = this._x + add_x;
-            int y = this._y + add_y;
+            int y = this._y - add_y;
             return new Point(x, y);
         }
 
         /// <summary>
-        /// Adds the given point to this one by summing the x and y values.
+        /// Giving friction to user movements by dividing the x and y values.
         /// </summary>
         /// <param name="other">The point to add.</param>
         /// <returns>The sum as a new Point.</returns>
-        public void Friction_x()
+        public Point Friction_x(int x, int y)
         {
-            this._x = this._x / 2;
+            int new_x = x / 2;
+            int new_y = y / 2;
+            return new Point(new_x, new_y);
         }
 
 
