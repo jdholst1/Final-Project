@@ -24,6 +24,14 @@ namespace Unit06.Game.Scripting
             {
                 mario.MoveRight();
             }
+            else if (_keyboardService.IsKeyDown(Constants.UP))
+            {
+                mario.Bounce();
+            }
+            else if (_keyboardService.IsKeyDown(Constants.DOWN))
+            {
+                mario.Duck();
+            }
             else
             {
                 mario.StopMoving(true, false);

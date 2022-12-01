@@ -49,9 +49,13 @@ namespace Unit06
         // KEYS
         public static string LEFT = "left";
         public static string RIGHT = "right";
+        public static string UP = "up";
+        public static string DOWN = "down";
         public static string SPACE = "space";
         public static string ENTER = "enter";
         public static string PAUSE = "p";
+        public static string OZ = "o";
+
 
         // SCENES
         public static string NEW_GAME = "new_game";
@@ -83,7 +87,7 @@ namespace Unit06
 
         // STATS
         public static string STATS_GROUP = "stats";
-        public static int DEFAULT_LIVES = 3;
+        public static int DEFAULT_LIVES = 30;
         public static int MAXIMUM_LIVES = 5;
 
         // HUD
@@ -109,12 +113,13 @@ namespace Unit06
             = new List<string>() {
                 "Assets/Images/guido01.png",
                 "Assets/Images/guido02.png",
-                "Assets/Images/guido03.png"
+                "Assets/Images/guido03.png",
+                "Assets/Images/guido04.png"
             };
 
         public static int PLUMBER_WIDTH = 100;
         public static int PLUMBER_HEIGHT = 28;
-        public static int PLUMBER_RATE = 6;
+        public static int PLUMBER_RATE = 12;
         public static int PLUMBER_SPEED = 7;
 
         // BRICK
@@ -149,7 +154,7 @@ namespace Unit06
 
         // DIALOG
         public static string DIALOG_GROUP = "dialogs";
-        public static string ENTER_TO_START = "PRESS ENTER TO START";
+        public static string ENTER_TO_START = "PRESS ENTER TO START (10$)";
         public static string PREP_TO_LAUNCH = "Let's-a-go!";
         public static string WAS_GOOD_GAME = "GAME OVER";
 

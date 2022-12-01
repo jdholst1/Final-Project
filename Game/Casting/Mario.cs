@@ -45,7 +45,9 @@ namespace Unit06.Game.Casting
             Point velocity = _body.GetVelocity();
             Point newPosition = position.Add(velocity);
             _body.SetPosition(newPosition);
+            // velocity.Friction_x();
         }
+
 
         /// <summary>
         /// Moves Mario to the left.
@@ -69,6 +71,28 @@ namespace Unit06.Game.Casting
             velocity.Friction_x();
             _body.SetVelocity(velocity);
         }
+
+        /// <summary>
+        /// Moves Mario to the right.
+        /// </summary>
+        public void Bounce()
+        {
+            // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
+            Point velocity = _body.GetVelocity();
+            velocity = velocity.AddValues(0, Constants.PLUMBER_SPEED);
+            _body.SetVelocity(velocity);
+        }
+        /// <summary>
+        /// Moves Mario to the right.
+        /// </summary>
+        public void Duck()
+        {
+            // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
+            Point velocity = _body.GetVelocity();
+            velocity = velocity.AddValues(0, -Constants.PLUMBER_SPEED);
+            _body.SetVelocity(velocity);
+        }
+
 
         /// <summary>
         /// Stops Mario from moving in a specified direction.
