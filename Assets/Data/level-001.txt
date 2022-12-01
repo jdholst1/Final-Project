@@ -1,12 +1,5 @@
-s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1
-s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1
-s1, s1, s1, s1, b2, s1, s1, s1, s1, s1, s1, s1, s1  
-s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1
-s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1
-s1, s1, b1, b2, b1, b2, s1, s1, b1, b2, b1, s1, b1  //layer with blocks (b1:bricks; b2:? blocks)
-s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1
-s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1, s1  //first line of empty space
-g1, g1, g1, g1, g1, g1, g1, g1, g1, g1, g1, g1, g1  //top level ground
-g2, g2, g2, g2, g2, g2, g2, g2, g2, g2, g2, g2, g2  //more ground
-g2, g2, g2, g2, g2, g2, g2, g2, g2, g2, g2, g2, g2
-g2, g2, g2, g2, g2, g2, g2, g2, g2, g2, g2, g2, g2  // bottomw level ground (just above bottom screen boudary)
+b1, s1, b1, s1, b1, s1, b1, s1, b1, s1, b1, s1, b1
+b1, b1, b1, b1, b1, b1, b1, b1, b1, b1, b1, b1, b1
+s1, b1, s1, b1, s1, b1, s1, b1, s1, b1, s1, b1, s1
+b1, b1, b1, b1, b1, b1, b1, b1, b1, b1, b1, b1, b1
+b1, s1, b1, s1, b1, s1, b1, s1, b1, s1, b1, s1, b1

@@ -125,51 +125,19 @@ namespace Unit06
             = new Dictionary<string, List<string>>() {
                 //Null Space
                 { "s", new List<string>() {
-                    "Assets/Images/010.png",
-                    "Assets/Images/011.png",
-                    "Assets/Images/012.png",
-                    "Assets/Images/013.png",
-                    "Assets/Images/014.png",
-                    "Assets/Images/015.png",
-                    "Assets/Images/016.png",
-                    "Assets/Images/017.png",
-                    "Assets/Images/018.png"
+                    "Assets/Images/special_block00.png"
                 } },
                 //Ground
                 { "g", new List<string>() {
-                    "Assets/Images/020.png",
-                    "Assets/Images/021.png",
-                    "Assets/Images/022.png",
-                    "Assets/Images/023.png",
-                    "Assets/Images/024.png",
-                    "Assets/Images/025.png",
-                    "Assets/Images/026.png",
-                    "Assets/Images/027.png",
-                    "Assets/Images/028.png"
+                    "Assets/Images/special_block00.png"
                 } },
                 //bricks
                 { "b", new List<string>() {
-                    "Assets/Images/030.png",
-                    "Assets/Images/031.png",
-                    "Assets/Images/032.png",
-                    "Assets/Images/033.png",
-                    "Assets/Images/034.png",
-                    "Assets/Images/035.png",
-                    "Assets/Images/036.png",
-                    "Assets/Images/037.png",
-                    "Assets/Images/038.png"
+                    "Assets/Images/ordinary_block00.png"
                 } },
                 //?blocks
                 { "bl", new List<string>() {
-                    "Assets/Images/040.png",
-                    "Assets/Images/041.png",
-                    "Assets/Images/042.png",
-                    "Assets/Images/043.png",
-                    "Assets/Images/044.png",
-                    "Assets/Images/045.png",
-                    "Assets/Images/046.png",
-                    "Assets/Images/047.png",
-                    "Assets/Images/048.png"
+                    "Assets/Images/special_block00.png"
                 } }
         };
 

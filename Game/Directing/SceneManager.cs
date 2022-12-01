@@ -282,7 +282,7 @@ namespace Unit06.Game.Directing
         }
 
         // -----------------------------------------------------------------------------------------
-        // scriptig methods
+        // scriptingz methodzz
         // -----------------------------------------------------------------------------------------
 
         private void AddInitActions(Script script)

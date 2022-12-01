@@ -8,7 +8,7 @@ namespace Unit06.Game.Casting
         private Point _position;
         private Point _size;
         private Point _velocity;
-        private bool _isGrounded;
+        // private bool _isGrounded;
 
         /// <summary>
         /// Constructs a new instance of Actor.

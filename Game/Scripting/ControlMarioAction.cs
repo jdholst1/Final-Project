@@ -26,7 +26,7 @@ namespace Unit06.Game.Scripting
             }
             else
             {
-                mario.StopMoving();
+                mario.StopMoving(true, false);
             }
         }
     }

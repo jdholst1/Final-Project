@@ -1,7 +1,7 @@
 Documentation on the casting classes:
 
 Actor: a thing that participates in the game
-- debug: is it being debugged? (default is 0)
+- debug: is it being debugged? (default is false)
 
 
 Point: stores an x value and a y value,
@@ -11,7 +11,7 @@ Point: stores an x value and a y value,
 - AddValues(int x, int y): adds two values to the point and returns
             the result
 - Scale(int scale, bool x, bool y): takes a scalar value and changes
-            x, y, or both by the value. For example, Scale(2, 1, 0)
+            x, y, or both by the value. For example, Scale(2, true, false)
             will double the x but keep the y value the same.
 - Reverse(): simply multiplies the x and y values by -1 to reflect them
 

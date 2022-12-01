@@ -1,0 +1,5 @@
+s1, s1, s1, s1, s1, s1, s1, s1, s1, s1
+s1, s1, b1, b2, b1, b2, s1, s1, b1, b2
+s1, s1, s1, s1, s1, s1, s1, s1, s1, s1
+s1, s1, s1, s1, s1, s1, s1, s1, s1, s1
+g1, g1, g1, g1, g1, g1, g1, g1, g1, g1

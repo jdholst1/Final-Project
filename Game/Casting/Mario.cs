@@ -7,7 +7,7 @@ namespace Unit06.Game.Casting
     {
         private Body _body;
         private Animation _animation;
-        private bool _isGrounded;
+        // private bool _isGrounded;
 
         /// <summary>
         /// Constructs our instance of Mario
