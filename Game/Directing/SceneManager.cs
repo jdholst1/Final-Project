@@ -15,7 +15,7 @@ namespace Unit06.Game.Directing
         public static MouseService MouseService = new RaylibMouseService();
         public static PhysicsService PhysicsService = new RaylibPhysicsService();
         public static VideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
-            Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
+            Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLUE);
 
         public SceneManager()
         {

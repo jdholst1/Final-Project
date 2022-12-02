@@ -103,20 +103,26 @@ namespace Unit06.Game.Casting
         {
             int new_x = _body.GetVelocity().GetX();
             int new_y = _body.GetVelocity().GetY();
-
-            // if (x)
-            // {
-            //     new_x = 0;
-            // }
-            // if (y)
-            // {
-            //     new_y = 0;
-            // }
             Point velocity = _body.GetVelocity();
-            velocity = velocity.Friction_x(velocity.GetX(), velocity.GetY());
+
+            if (x)
+            {
+                new_x = 0;
+            }
+            else
+            {
+                new_x = velocity.GetX();
+            }
+            if (y)
+            {
+                new_y = 0;
+            }
+            else
+            {
+                new_y = velocity.GetY();
+            }
+            velocity = velocity.Friction_x(new_x, new_y);
             _body.SetVelocity(velocity);
-
-
         }
 
     }

@@ -34,6 +34,7 @@ namespace Unit06.Game.Scripting
             }
             mario.StopMoving(false, false);
 
+
         }
     }
 }

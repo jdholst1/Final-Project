@@ -45,6 +45,7 @@ namespace Unit06
         public static Color BLACK = new Color(0, 0, 0);
         public static Color WHITE = new Color(255, 255, 255);
         public static Color PURPLE = new Color(255, 0, 255);
+        public static Color BLUE = new Color(100, 150, 225);
 
         // KEYS
         public static string LEFT = "left";
@@ -111,15 +112,15 @@ namespace Unit06
 
         public static List<string> MARIO_IMAGES
             = new List<string>() {
-                "Assets/Images/guido01.png",
-                "Assets/Images/guido02.png",
-                "Assets/Images/guido03.png",
-                "Assets/Images/guido04.png"
+                // "Assets/Images/guido01.png",
+                "Assets/Images/guido01a.png"
+                // "Assets/Images/guido01b.png"
+                // "Assets/Images/guido04.png"
             };
 
         public static int PLUMBER_WIDTH = 100;
-        public static int PLUMBER_HEIGHT = 28;
-        public static int PLUMBER_RATE = 12;
+        public static int PLUMBER_HEIGHT = 180;
+        public static int PLUMBER_RATE = 300;
         public static int PLUMBER_SPEED = 5;
 
         // BRICK
@@ -130,24 +131,30 @@ namespace Unit06
             = new Dictionary<string, List<string>>() {
                 //Null Space
                 { "s", new List<string>() {
-                    "Assets/Images/special_block01.png"
+                    "Assets/Images/block5000.png"
                 } },
                 //Ground
                 { "g", new List<string>() {
-                    "Assets/Images/special_block01.png"
+                    "Assets/Images/block30.png"
                 } },
                 //bricks
                 { "b", new List<string>() {
-                    "Assets/Images/ordinary_block00.png"
+                    "Assets/Images/block00.png",
+                    "Assets/Images/block10.png",
+                    "Assets/Images/block30.png",
+                    "Assets/Images/block40.png",
+                    "Assets/Images/block60.png",
+                    "Assets/Images/block80.png",
+                    "Assets/Images/block100.png"
                 } },
                 //?blocks
                 { "bl", new List<string>() {
-                    "Assets/Images/special_block01.png"
+                    "Assets/Images/block20.png"
                 } }
         };
 
-        public static int BRICK_WIDTH = 30;
-        public static int BRICK_HEIGHT = 30;
+        public static int BRICK_WIDTH = 50;
+        public static int BRICK_HEIGHT = 50;
         public static double BRICK_DELAY = 0.5;
         public static int BRICK_RATE = 4;
         public static int BRICK_POINTS = 50;
