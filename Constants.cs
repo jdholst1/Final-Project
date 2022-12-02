@@ -148,8 +148,8 @@ namespace Unit06
                     "Assets/Images/block100.png"
                 } },
                 //?blocks
-                { "bl", new List<string>() {
-                    "Assets/Images/block20.png"
+                { "r", new List<string>() {
+                    "Assets/Images/block50.png"
                 } }
         };
 
