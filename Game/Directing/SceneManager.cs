@@ -187,7 +187,11 @@ namespace Unit06.Game.Directing
                     Animation animation = new Animation(images, Constants.BRICK_RATE, 1);
 
                     Brick brick = new Brick(body, animation, points, false);
-                    cast.AddActor(Constants.BRICK_GROUP, brick);
+                    if (color != "s")
+                    {
+                        cast.AddActor(Constants.BRICK_GROUP, brick);
+                    }
+
                 }
             }
         }
