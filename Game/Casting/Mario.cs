@@ -96,6 +96,35 @@ namespace Unit06.Game.Casting
 
 
         /// <summary>
+        /// Makes Mario fall
+        /// </summary>
+        public void Fall()
+        {
+            Point velocity = _body.GetVelocity();
+            velocity.AddValues(0, 1);
+            _body.SetVelocity(velocity);
+
+        }
+
+        /// <summary>
+        /// Moves Mario up by one pixel
+        /// </summary>
+        public void ShiftUp()
+        {
+            Point position = _body.GetPosition().Add(new Point(0, -1));
+            _body.SetPosition(position);
+        }
+
+        /// <summary>
+        /// Makes Mario go back if a wall is a vertical wall and not a horizontal platform
+        /// </summary>
+        public void HitWall()
+        {
+            Point position = _body.GetPosition().Add(new Point(_body.GetVelocity().GetX() * -1, 10));
+            _body.SetPosition(position);
+        }
+
+        /// <summary>
         /// Stops Mario from moving in a specified direction.
         /// </summary>
         /// 

@@ -33,7 +33,7 @@ namespace Unit06.Game.Scripting
                 mario.Duck();
             }
             mario.StopMoving(false, false);
-
+            mario.Fall();
 
         }
     }

@@ -18,7 +18,7 @@ namespace Unit06.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            //Ball ball = (Ball)cast.GetFirstActor(Constants.BALL_GROUP);
+            Mario mario = (Mario)cast.GetFirstActor(Constants.PLUMBER_GROUP);
             List<Actor> bricks = cast.GetActors(Constants.BRICK_GROUP);
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
 
@@ -26,17 +26,38 @@ namespace Unit06.Game.Scripting
             {
                 Brick brick = (Brick)actor;
                 Body brickBody = brick.GetBody();
-                //Body ballBody = ball.GetBody();
+                Body plumberBody = mario.GetBody();
 
-                // if (_physicsService.HasCollided(brickBody, ballBody))
-                // {
-                //     //ball.BounceY();
-                //     Sound sound = new Sound(Constants.BOUNCE_SOUND);
-                //     _audioService.PlaySound(sound);
-                //     int points = brick.GetPoints();
-                //     stats.AddPoints(points);
-                //     cast.RemoveActor(Constants.BRICK_GROUP, brick);
-                // }
+                if (_physicsService.HasCollided(brickBody, plumberBody))
+                {
+                    Sound sound = new Sound(Constants.BOUNCE_SOUND);
+                    _audioService.PlaySound(sound);
+                    int slope = 0;
+
+                    while (_physicsService.HasCollided(brickBody, plumberBody) && slope < 10)
+                    {
+                        slope++;
+                        mario.ShiftUp();
+                    }
+                    if (slope == 10)
+                    {
+                        mario.HitWall();
+                        mario.StopMoving(true, false);
+                        // mario.Fall();
+                    }
+                    else
+                    {
+                        mario.StopMoving(false, true);
+                    }
+
+                    // int points = brick.GetPoints();
+                    // stats.AddPoints(points);
+                    // cast.RemoveActor(Constants.BRICK_GROUP, brick);
+                }
+                else
+                {
+                    // mario.Fall();
+                }
             }
         }
     }

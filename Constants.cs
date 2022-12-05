@@ -118,8 +118,8 @@ namespace Unit06
                 // "Assets/Images/guido04.png"
             };
 
-        public static int PLUMBER_WIDTH = 100;
-        public static int PLUMBER_HEIGHT = 180;
+        public static int PLUMBER_WIDTH = 40;
+        public static int PLUMBER_HEIGHT = 100;
         public static int PLUMBER_RATE = 300;
         public static int PLUMBER_SPEED = 5;
 

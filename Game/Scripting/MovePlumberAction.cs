@@ -15,6 +15,7 @@ namespace Unit06.Game.Scripting
             Point position = body.GetPosition();
             Point velocity = body.GetVelocity();
             int x = position.GetX();
+            int y = position.GetY();
 
             position = position.Add(velocity);
             if (x < 0)
@@ -25,6 +26,15 @@ namespace Unit06.Game.Scripting
             {
                 position = new Point(Constants.SCREEN_WIDTH - Constants.PLUMBER_WIDTH,
                     position.GetY());
+            }
+            if (y < 0)
+            {
+                position = new Point(position.GetX(), 0);
+            }
+            else if (y > Constants.SCREEN_HEIGHT - Constants.PLUMBER_HEIGHT)
+            {
+                position = new Point(position.GetX(),
+                    Constants.SCREEN_HEIGHT - Constants.PLUMBER_HEIGHT);
             }
 
             body.SetPosition(position);
