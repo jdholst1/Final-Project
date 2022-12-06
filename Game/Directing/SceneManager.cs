@@ -114,8 +114,11 @@ namespace Unit06.Game.Directing
 
             script.ClearAllActions();
 
-            ControlPlumberAction action = new ControlPlumberAction(KeyboardService);
+            ControlPlumberAction action = new ControlPlumberAction(KeyboardService, AudioService);
             script.AddAction(Constants.INPUT, action);
+
+            PlaySoundAction sa = new PlaySoundAction(AudioService, Constants.MUSIC_TRACK_1);
+            script.AddAction(Constants.OUTPUT, sa);
 
             AddUpdateActions(script);
             AddOutputActions(script);

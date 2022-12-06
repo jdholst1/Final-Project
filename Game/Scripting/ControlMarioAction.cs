@@ -9,9 +9,10 @@ namespace Unit06.Game.Scripting
         private KeyboardService _keyboardService;
         private AudioService _audioService;
 
-        public ControlPlumberAction(KeyboardService keyboardService)
+        public ControlPlumberAction(KeyboardService keyboardService, AudioService audioservice)
         {
             this._keyboardService = keyboardService;
+            this._audioService = audioservice;
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)

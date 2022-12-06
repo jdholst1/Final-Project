@@ -35,6 +35,9 @@ namespace Unit06
         public static string WELCOME_SOUND = "Assets/Sounds/start.wav";
         public static string OVER_SOUND = "Assets/Sounds/over.wav";
 
+        //MUSIC
+        public static string MUSIC_TRACK_1 = "Assets/Sounds/16 Athletic.mp3";
+
         // TEXT
         public static int ALIGN_LEFT = 0;
         public static int ALIGN_CENTER = 1;
