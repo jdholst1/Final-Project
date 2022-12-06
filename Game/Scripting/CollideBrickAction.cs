@@ -30,8 +30,7 @@ namespace Unit06.Game.Scripting
 
                 if (_physicsService.HasCollided(brickBody, plumberBody))
                 {
-                    // Sound sound = new Sound(Constants.BOUNCE_SOUND);
-                    // _audioService.PlaySound(sound);
+
                     int slope = 0;
 
                     while (_physicsService.HasCollided(brickBody, plumberBody) && slope < 40)
@@ -55,14 +54,9 @@ namespace Unit06.Game.Scripting
                         }
 
                     }
-
                     // int points = brick.GetPoints();
                     // stats.AddPoints(points);
                     // cast.RemoveActor(Constants.BRICK_GROUP, brick);
-                }
-                else
-                {
-                    // mario.Fall();
                 }
             }
         }

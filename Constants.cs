@@ -31,7 +31,7 @@ namespace Unit06
         public static int FONT_SIZE = 32;
 
         // SOUND
-        public static string BOUNCE_SOUND = "Assets/Sounds/boing.wav";
+        public static string BOUNCE_SOUND = "Assets/Sounds/smw_jump.wav";
         public static string WELCOME_SOUND = "Assets/Sounds/start.wav";
         public static string OVER_SOUND = "Assets/Sounds/over.wav";
 
@@ -112,14 +112,14 @@ namespace Unit06
 
         public static List<string> MARIO_IMAGES
             = new List<string>() {
-                // "Assets/Images/guido01.png",
-                "Assets/Images/guido01a.png"
+                "Assets/Images/Weegee01.png",
+                "Assets/Images/Weegee02.png"
                 // "Assets/Images/guido01b.png"
                 // "Assets/Images/guido04.png"
             };
 
-        public static int PLUMBER_WIDTH = 40;
-        public static int PLUMBER_HEIGHT = 90;
+        public static int PLUMBER_WIDTH = 32;
+        public static int PLUMBER_HEIGHT = 50;
         public static int PLUMBER_RATE = 40;
         public static int PLUMBER_SPEED = 10;
         public static int PLUMBER_JUMP = 5;

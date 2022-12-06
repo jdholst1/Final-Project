@@ -9,6 +9,7 @@ namespace Unit06.Game.Casting
         private Animation _animation;
         private int _isGrounded;
         private bool _wallJump;
+        private bool _isIdle;
 
         /// <summary>
         /// Constructs our instance of Mario
@@ -17,6 +18,7 @@ namespace Unit06.Game.Casting
         {
             this._body = body;
             this._animation = animation;
+            this._isIdle = false;
         }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace Unit06.Game.Casting
             Point velocity = _body.GetVelocity();
             velocity = velocity.AddValues(0, Constants.PLUMBER_JUMP);
             _body.SetVelocity(velocity);
+
         }
 
         /// <summary>
@@ -105,7 +108,6 @@ namespace Unit06.Game.Casting
             _body.SetVelocity(new Point(0, 0));
         }
 
-
         /// <summary>
         /// Makes Mario fall
         /// </summary>
@@ -119,6 +121,15 @@ namespace Unit06.Game.Casting
             velocity = velocity.AddValues(0, -1);
             _body.SetVelocity(velocity);
             this._isGrounded++;
+        }
+
+        /// <summary>
+        /// Makes Mario fall
+        /// </summary>
+        public bool GetIdle()
+        {
+            return _isIdle;
+
         }
 
         /// <summary>

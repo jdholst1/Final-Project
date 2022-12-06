@@ -7,6 +7,7 @@ namespace Unit06.Game.Scripting
     public class ControlPlumberAction : Action
     {
         private KeyboardService _keyboardService;
+        private AudioService _audioService;
 
         public ControlPlumberAction(KeyboardService keyboardService)
         {
@@ -29,6 +30,8 @@ namespace Unit06.Game.Scripting
             if (_keyboardService.IsKeyDown(Constants.UP) && (mario.GetGrounded() < 4))
             {
                 mario.Bounce();
+                Sound sound = new Sound(Constants.BOUNCE_SOUND);
+                _audioService.PlaySound(sound);
             }
             else if (_keyboardService.IsKeyDown(Constants.UP) && (mario.GetWall()))
             {
