@@ -7,7 +7,8 @@ namespace Unit06.Game.Casting
     {
         private Body _body;
         private Animation _animation;
-        // private bool _isGrounded;
+        private int _isGrounded;
+        private bool _wallJump;
 
         /// <summary>
         /// Constructs our instance of Mario
@@ -79,8 +80,20 @@ namespace Unit06.Game.Casting
         {
             // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
             Point velocity = _body.GetVelocity();
-            velocity = velocity.AddValues(0, Constants.PLUMBER_SPEED);
+            velocity = velocity.AddValues(0, Constants.PLUMBER_JUMP);
             _body.SetVelocity(velocity);
+        }
+
+        /// <summary>
+        /// Makes Mario bounce off of a wall
+        /// </summary>
+        public void WallKick(int side)
+        {
+            // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
+            Point velocity = new Point(0, Constants.PLUMBER_JUMP);
+            velocity = velocity.AddValues(Constants.PLUMBER_SPEED * side * 4, Constants.PLUMBER_JUMP * 2);
+            _body.SetVelocity(velocity);
+            this._wallJump = false;
         }
 
         /// <summary>
@@ -89,9 +102,7 @@ namespace Unit06.Game.Casting
         public void Duck()
         {
             // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
-            Point velocity = _body.GetVelocity();
-            velocity = velocity.AddValues(0, -(Constants.PLUMBER_SPEED));
-            _body.SetVelocity(velocity);
+            _body.SetVelocity(new Point(0, 0));
         }
 
 
@@ -101,9 +112,45 @@ namespace Unit06.Game.Casting
         public void Fall()
         {
             Point velocity = _body.GetVelocity();
-            velocity.AddValues(0, 1);
+            // if (_body.GetVelocity().GetY() > -5)
+            // {
+            //     velocity = velocity.AddValues(0, -1);
+            // }
+            velocity = velocity.AddValues(0, -1);
             _body.SetVelocity(velocity);
+            this._isGrounded++;
+        }
 
+        /// <summary>
+        /// Sets if Mario is on the ground
+        /// </summary>
+        public void SetGrounded(int toggle)
+        {
+            this._isGrounded = toggle;
+        }
+
+        /// <summary>
+        /// Returns if Mario is on the ground
+        /// </summary>
+        public int GetGrounded()
+        {
+            return this._isGrounded;
+        }
+
+        /// <summary>
+        /// Sets if Mario is on the ground
+        /// </summary>
+        public void SetWall(bool toggle)
+        {
+            this._wallJump = toggle;
+        }
+
+        /// <summary>
+        /// Returns if Mario is on the ground
+        /// </summary>
+        public bool GetWall()
+        {
+            return this._wallJump;
         }
 
         /// <summary>

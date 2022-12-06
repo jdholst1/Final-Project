@@ -48,7 +48,7 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Giving friction to user movements by dividing the x and y values.
+        /// Giving friction to user movements by dividing the x value.
         /// </summary>
         /// <param name="other">The point to add.</param>
         /// <returns>The sum as a new Point.</returns>
@@ -56,7 +56,7 @@ namespace Unit06.Game.Casting
         {
             int new_x = x / 2;
             int new_y = y / 2;
-            return new Point(new_x, new_y);
+            return new Point(new_x, y);
         }
 
 

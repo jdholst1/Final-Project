@@ -34,20 +34,26 @@ namespace Unit06.Game.Scripting
                     // _audioService.PlaySound(sound);
                     int slope = 0;
 
-                    while (_physicsService.HasCollided(brickBody, plumberBody) && slope < 11)
+                    while (_physicsService.HasCollided(brickBody, plumberBody) && slope < 40)
                     {
                         slope++;
                         mario.ShiftUp();
                     }
-                    if (slope > 10)
+                    if (slope > 38)
                     {
                         mario.HitWall(slope);
                         mario.StopMoving(true, false);
-                        // mario.Fall();
+                        mario.SetWall(true);
                     }
                     else
                     {
                         mario.StopMoving(false, true);
+                        if (!(mario.GetBody().GetVelocity().GetY() > 0))
+                        {
+                            mario.SetGrounded(0);
+                            mario.SetWall(false);
+                        }
+
                     }
 
                     // int points = brick.GetPoints();
