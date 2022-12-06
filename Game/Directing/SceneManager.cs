@@ -240,7 +240,7 @@ namespace Unit06.Game.Directing
             int x = Constants.CENTER_X - Constants.PLUMBER_WIDTH / 2;
             int y = Constants.SCREEN_HEIGHT - Constants.PLUMBER_HEIGHT;
 
-            Point position = new Point(x, y);
+            Point position = new Point(x, 350);
             Point size = new Point(Constants.PLUMBER_WIDTH, Constants.PLUMBER_HEIGHT);
             Point velocity = new Point(0, 0);
 

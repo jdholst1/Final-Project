@@ -111,16 +111,28 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void ShiftUp()
         {
-            Point position = _body.GetPosition().Add(new Point(0, -1));
+            Point position = new Point(0, 0);
+            if (_body.GetVelocity().GetY() >= 0)
+            {
+                position = _body.GetPosition().Add(new Point(0, -1));
+            }
+            else
+            {
+                position = _body.GetPosition().Add(new Point(0, 1));
+            }
             _body.SetPosition(position);
         }
 
         /// <summary>
         /// Makes Mario go back if a wall is a vertical wall and not a horizontal platform
         /// </summary>
-        public void HitWall()
+        public void HitWall(int slope)
         {
-            Point position = _body.GetPosition().Add(new Point(_body.GetVelocity().GetX() * -1, 10));
+            if (_body.GetVelocity().GetY() >= 0)
+            {
+                slope *= -1;
+            }
+            Point position = _body.GetPosition().Add(new Point(_body.GetVelocity().GetX() * -1, slope * -1));
             _body.SetPosition(position);
         }
 
