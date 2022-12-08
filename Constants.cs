@@ -130,7 +130,7 @@ namespace Unit06
 
         public static int PLUMBER_WIDTH = 32;
         public static int PLUMBER_HEIGHT = 50;
-        public static int PLUMBER_RATE = 40;
+        public static int PLUMBER_RATE = 20;
         public static int PLUMBER_SPEED = 10;
         public static int PLUMBER_JUMP = 5;
 
@@ -163,6 +163,10 @@ namespace Unit06
                 //Pipes
                 { "p", new List<string>() {
                     "Assets/Images/pipe01.png"
+                } },
+                //invisible block for Detection
+                { "d", new List<string>() {
+                    "Assets/Images/pipe00.png"
                 } }
         };
 
