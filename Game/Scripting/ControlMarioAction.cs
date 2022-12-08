@@ -44,6 +44,7 @@ namespace Unit06.Game.Scripting
             }
             mario.StopMoving(false, false);
             mario.Fall();
+            mario.ReduceIdle();
             // mario.SetGrounded(0);
 
         }

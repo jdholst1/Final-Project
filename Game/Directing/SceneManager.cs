@@ -249,9 +249,15 @@ namespace Unit06.Game.Directing
 
             Body body = new Body(position, size, velocity);
             Animation animation = new Animation(Constants.MARIO_IMAGES, Constants.PLUMBER_RATE, 0);
-            Mario mario = new Mario(body, animation, true);
+            Mario mario = new Mario(body, animation, false);
 
             cast.AddActor(Constants.PLUMBER_GROUP, mario);
+
+            //     Body body = new Body(position, size, velocity);
+            //     Animation animation = new Animation(Constants.LUIGI_IMAGES, Constants.PLUMBER_RATE, 0);
+            //     Mario luigi = new Mario(body, animation, false);
+
+            //     cast.AddActor(Constants.PLUMBER_GROUP, luigi);
         }
 
         private void AddScore(Cast cast)

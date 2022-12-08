@@ -9,7 +9,7 @@ namespace Unit06.Game.Casting
         private Animation _animation;
         private int _isGrounded;
         private bool _wallJump;
-        private bool _isIdle;
+        private int _isIdle;
 
         /// <summary>
         /// Constructs our instance of Mario
@@ -18,7 +18,7 @@ namespace Unit06.Game.Casting
         {
             this._body = body;
             this._animation = animation;
-            this._isIdle = false;
+            this._isIdle = 0;
         }
 
         /// <summary>
@@ -51,16 +51,18 @@ namespace Unit06.Game.Casting
             // velocity.Friction_x();
         }
 
-
         /// <summary>
         /// Moves Mario to the left.
         /// </summary>
         public void MoveLeft()
         {
             Point velocity = _body.GetVelocity();
-            velocity = velocity.AddValues(-Constants.PLUMBER_SPEED, 0);
-            // velocity.Friction_x();
-            _body.SetVelocity(velocity);
+            if (this._isIdle < 0)
+            {
+                velocity = velocity.AddValues(-Constants.PLUMBER_SPEED, 0);
+                // velocity.Friction_x();
+                _body.SetVelocity(velocity);
+            }
         }
 
         /// <summary>
@@ -70,9 +72,12 @@ namespace Unit06.Game.Casting
         {
             // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
             Point velocity = _body.GetVelocity();
-            velocity = velocity.AddValues(Constants.PLUMBER_SPEED, 0);
-            // velocity.Friction_x();
-            _body.SetVelocity(velocity);
+            if (this._isIdle < 0)
+            {
+                velocity = velocity.AddValues(Constants.PLUMBER_SPEED, 0);
+                // velocity.Friction_x();
+                _body.SetVelocity(velocity);
+            }
         }
 
         /// <summary>
@@ -94,9 +99,10 @@ namespace Unit06.Game.Casting
         {
             // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
             Point velocity = new Point(0, Constants.PLUMBER_JUMP);
-            velocity = velocity.AddValues(Constants.PLUMBER_SPEED * side * 4, Constants.PLUMBER_JUMP * 2);
+            velocity = velocity.AddValues(Constants.PLUMBER_SPEED * side * 4, Constants.PLUMBER_JUMP * 4);
             _body.SetVelocity(velocity);
             this._wallJump = false;
+            this._isIdle = 20;
         }
 
         /// <summary>
@@ -124,12 +130,19 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Makes Mario fall
+        /// Returns if Mario is idle (idle > 0 means he's idle and cannot input controls)
         /// </summary>
-        public bool GetIdle()
+        public int GetIdle()
         {
             return _isIdle;
+        }
 
+        /// <summary>
+        /// Reduces Mario's idle value by 1. This happens each frame.
+        /// </summary>
+        public void ReduceIdle()
+        {
+            this._isIdle -= 1;
         }
 
         /// <summary>
@@ -220,7 +233,7 @@ namespace Unit06.Game.Casting
             {
                 new_y = velocity.GetY();
             }
-            velocity = velocity.Friction_x(new_x, new_y);
+            velocity = velocity.Friction_x(new_x, new_y, (this._isGrounded > 4));
             _body.SetVelocity(velocity);
         }
 

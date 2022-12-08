@@ -52,9 +52,22 @@ namespace Unit06.Game.Casting
         /// </summary>
         /// <param name="other">The point to add.</param>
         /// <returns>The sum as a new Point.</returns>
-        public Point Friction_x(int x, int y)
+        public Point Friction_x(int x, int y, bool grounded)
         {
-            int new_x = x / 2;
+            int new_x = x;
+            if (!grounded)
+            {
+                new_x = x / 2;
+            }
+            else if (x > 8)
+            {
+                new_x = 8;
+            }
+            else if (x < -8)
+            {
+                new_x = -8;
+            }
+
             int new_y = y / 2;
             return new Point(new_x, y);
         }
