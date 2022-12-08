@@ -14,13 +14,14 @@ namespace Unit06.Game.Casting
         private int _isIdle;
         private int _isFacingRight = 6;
         private List<Animation> _animationsList;
+        private bool _ID;
 
         /// <summary>
         /// Constructs our instance of Mario
         /// </summary>
         public Mario(Body body, bool plumber_ID, bool debug) : base(debug)
         {
-
+            this._ID = plumber_ID;
             if (plumber_ID)
             {
                 Animation idle = new Animation(Constants.MARIO_IDLE, Constants.PLUMBER_RATE, 1);
@@ -55,7 +56,6 @@ namespace Unit06.Game.Casting
             }
             this._body = body;
             this._isIdle = 0;
-
         }
 
         /// <summary>
@@ -222,6 +222,13 @@ namespace Unit06.Game.Casting
         public bool GetWall()
         {
             return this._wallJump;
+        }
+        /// <summary>
+        /// Returns if it's Mario or Luigi
+        /// </summary>
+        public bool GetID()
+        {
+            return this._ID;
         }
 
         /// <summary>

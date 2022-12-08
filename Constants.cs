@@ -261,14 +261,13 @@ namespace Unit06
                 { "b", new List<string>() {
                     "Assets/Images/block15.00.png",
                     "Assets/Images/block15.01.png",
+                    "Assets/Images/block15.02.png",
                     "Assets/Images/block15.03.png",
                     "Assets/Images/block15.04.png",
                     "Assets/Images/block15.05.png",
+                    "Assets/Images/block15.06.png",
                     "Assets/Images/block15.07.png",
                     "Assets/Images/block15.08.png",
-                    "Assets/Images/block15.09.png",
-                    "Assets/Images/block15.11.png",
-                    "Assets/Images/block15.12.png",
                     }
                 },
                 //bRicks
@@ -283,12 +282,12 @@ namespace Unit06
                 },
                 //Pipes
                 { "p", new List<string>() {
-                    "Assets/Images/pipe01.png"
+                    "Assets/Images/pipe61.png"
                     }
                 },
                 //invisible block for Detection
                 { "d", new List<string>() {
-                    "Assets/Images/pipe61.png"
+                    "Assets/Images/pipe00.png"
                     }
                 }
         };
