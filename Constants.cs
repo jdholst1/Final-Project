@@ -150,13 +150,7 @@ namespace Unit06
                 } },
                 //Blocks
                 { "b", new List<string>() {
-                    "Assets/Images/special_block02.png",
-                    "Assets/Images/special_block02.png",
-                    "Assets/Images/block30.png",
-                    "Assets/Images/block40.png",
-                    "Assets/Images/block60.png",
-                    "Assets/Images/block80.png",
-                    "Assets/Images/block100.png"
+                    "Assets/Images/block01.png",
                 } },
                 //bRicks
                 { "r", new List<string>() {
@@ -165,6 +159,10 @@ namespace Unit06
                 //Stone blocks
                 { "s", new List<string>() {
                     "Assets/Images/stoneBlock01.png"
+                } },
+                //Pipes
+                { "p", new List<string>() {
+                    "Assets/Images/pipe01.png"
                 } }
         };
 
