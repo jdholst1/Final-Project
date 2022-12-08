@@ -267,7 +267,7 @@ namespace Unit06
                     "Assets/Images/block15.05.png",
                     "Assets/Images/block15.06.png",
                     "Assets/Images/block15.07.png",
-                    "Assets/Images/block15.08.png",
+                    "Assets/Images/block15.00.png",
                     }
                 },
                 //bRicks
