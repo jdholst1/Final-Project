@@ -115,6 +115,13 @@ namespace Unit06
 
         public static List<string> MARIO_IMAGES
             = new List<string>() {
+                "Assets/Images/mini_mario01.png",
+                "Assets/Images/mini_mario02.png"
+                // "Assets/Images/guido01b.png"
+                // "Assets/Images/guido04.png"
+            };
+        public static List<string> LUIGI_IMAGES
+            = new List<string>() {
                 "Assets/Images/Weegee01.png",
                 "Assets/Images/Weegee02.png"
                 // "Assets/Images/guido01b.png"
@@ -133,27 +140,31 @@ namespace Unit06
 
         public static Dictionary<string, List<string>> BRICK_IMAGES
             = new Dictionary<string, List<string>>() {
-                //Null Space
-                { "s", new List<string>() {
-                    "Assets/Images/block5000.png"
+                //null space, Void
+                { "v", new List<string>() {
+                    "Assets/Images/block50.png"
                 } },
                 //Ground
                 { "g", new List<string>() {
                     "Assets/Images/block30.png"
                 } },
-                //bricks
+                //Blocks
                 { "b", new List<string>() {
-                    "Assets/Images/block00.png",
-                    "Assets/Images/block10.png",
+                    "Assets/Images/special_block02.png",
+                    "Assets/Images/special_block02.png",
                     "Assets/Images/block30.png",
                     "Assets/Images/block40.png",
                     "Assets/Images/block60.png",
                     "Assets/Images/block80.png",
                     "Assets/Images/block100.png"
                 } },
-                //?blocks
+                //bRicks
                 { "r", new List<string>() {
-                    "Assets/Images/block50.png"
+                    "Assets/Images/bricks.png"
+                } },
+                //Stone blocks
+                { "s", new List<string>() {
+                    "Assets/Images/stoneBlock01.png"
                 } }
         };
 
