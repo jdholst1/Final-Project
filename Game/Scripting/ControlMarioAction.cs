@@ -38,14 +38,15 @@ namespace Unit06.Game.Scripting
             {
                 mario.WallKick(side);
             }
-            else if (_keyboardService.IsKeyDown(Constants.DOWN))
-            {
-                mario.Duck();
-            }
             mario.StopMoving(false, false);
             mario.Fall();
             mario.ReduceIdle();
             // mario.SetGrounded(0);
+            if (_keyboardService.IsKeyDown(Constants.DOWN))
+            {
+                mario.Duck();
+            }
+
 
         }
     }

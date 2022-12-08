@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Unit06.Game.Casting
 {
     /// <summary>
@@ -10,15 +12,29 @@ namespace Unit06.Game.Casting
         private int _isGrounded;
         private bool _wallJump;
         private int _isIdle;
+        private int _isFacingRight = 6;
+        private List<Animation> _animationsList;
 
         /// <summary>
         /// Constructs our instance of Mario
         /// </summary>
-        public Mario(Body body, Animation animation, bool debug) : base(debug)
+        public Mario(Body body, string plumber_ID, bool debug) : base(debug)
         {
+            Animation idle = new Animation(Constants.MARIO_IDLE, Constants.PLUMBER_RATE, 1);
+            Animation walking = new Animation(Constants.MARIO_WALK, Constants.PLUMBER_RATE, 1);
+            Animation jumping = new Animation(Constants.MARIO_JUMP, Constants.PLUMBER_RATE, 1);
+            Animation falling = new Animation(Constants.MARIO_FALL, Constants.PLUMBER_RATE, 1);
+            Animation ducking = new Animation(Constants.MARIO_DUCK, Constants.PLUMBER_RATE, 1);
+            Animation spinning = new Animation(Constants.MARIO_SPIN, Constants.PLUMBER_RATE, 1);
+            Animation idleL = new Animation(Constants.MARIO_IDLE_L, Constants.PLUMBER_RATE, 1);
+            Animation walkingL = new Animation(Constants.MARIO_WALK_L, Constants.PLUMBER_RATE, 1);
+            Animation jumpingL = new Animation(Constants.MARIO_JUMP_L, Constants.PLUMBER_RATE, 1);
+            Animation fallingL = new Animation(Constants.MARIO_FALL_L, Constants.PLUMBER_RATE, 1);
+            Animation duckingL = new Animation(Constants.MARIO_DUCK_L, Constants.PLUMBER_RATE, 1);
             this._body = body;
-            this._animation = animation;
+            this._animation = idle;
             this._isIdle = 0;
+            this._animationsList = new List<Animation> { idle, walking, jumping, falling, ducking, spinning, idleL, walkingL, jumpingL, fallingL, duckingL };
         }
 
         /// <summary>
@@ -62,6 +78,7 @@ namespace Unit06.Game.Casting
                 velocity = velocity.AddValues(-Constants.PLUMBER_SPEED, 0);
                 // velocity.Friction_x();
                 _body.SetVelocity(velocity);
+                this._isFacingRight = 6;
             }
         }
 
@@ -77,6 +94,7 @@ namespace Unit06.Game.Casting
                 velocity = velocity.AddValues(Constants.PLUMBER_SPEED, 0);
                 // velocity.Friction_x();
                 _body.SetVelocity(velocity);
+                this._isFacingRight = 0;
             }
         }
 
@@ -112,6 +130,7 @@ namespace Unit06.Game.Casting
         {
             // Point velocity = new Point(Constants.PLUMBER_SPEED, _body.GetVelocity().GetY());
             _body.SetVelocity(new Point(0, 0));
+            this._animation = this._animationsList[4 + this._isFacingRight];
         }
 
         /// <summary>
@@ -120,13 +139,20 @@ namespace Unit06.Game.Casting
         public void Fall()
         {
             Point velocity = _body.GetVelocity();
-            // if (_body.GetVelocity().GetY() > -5)
-            // {
-            //     velocity = velocity.AddValues(0, -1);
-            // }
             velocity = velocity.AddValues(0, -1);
             _body.SetVelocity(velocity);
             this._isGrounded++;
+            if (this._isGrounded > 5)
+            {
+                if (velocity.GetY() > 0)
+                {
+                    this._animation = this._animationsList[3 + this._isFacingRight];
+                }
+                else
+                {
+                    this._animation = this._animationsList[2 + this._isFacingRight];
+                }
+            }
         }
 
         /// <summary>
@@ -228,6 +254,14 @@ namespace Unit06.Game.Casting
             if (y)
             {
                 new_y = 0;
+                if (this.GetBody().GetVelocity().GetX() > 0)
+                {
+                    this._animation = this._animationsList[1 + this._isFacingRight];
+                }
+                else
+                {
+                    this._animation = this._animationsList[0 + this._isFacingRight];
+                }
             }
             else
             {
@@ -236,6 +270,5 @@ namespace Unit06.Game.Casting
             velocity = velocity.Friction_x(new_x, new_y, (this._isGrounded > 4));
             _body.SetVelocity(velocity);
         }
-
     }
 }

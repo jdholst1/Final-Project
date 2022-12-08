@@ -248,16 +248,17 @@ namespace Unit06.Game.Directing
             Point velocity = new Point(0, 0);
 
             Body body = new Body(position, size, velocity);
-            Animation animation = new Animation(Constants.MARIO_IMAGES, Constants.PLUMBER_RATE, 0);
-            Mario mario = new Mario(body, animation, false);
+            // Animation animation = new Animation(Constants.MARIO_IMAGES, Constants.PLUMBER_RATE, 0);
+            string plumber_ID = "mario";
+            Mario mario = new Mario(body, plumber_ID, false);
 
             cast.AddActor(Constants.PLUMBER_GROUP, mario);
 
-            //     Body body = new Body(position, size, velocity);
-            //     Animation animation = new Animation(Constants.LUIGI_IMAGES, Constants.PLUMBER_RATE, 0);
-            //     Mario luigi = new Mario(body, animation, false);
+            // Body body = new Body(position, size, velocity);
+            // Animation animation = new Animation(Constants.LUIGI_IMAGES, Constants.PLUMBER_RATE, 0);
+            // Mario luigi = new Mario(body, animation, false);
 
-            //     cast.AddActor(Constants.PLUMBER_GROUP, luigi);
+            // cast.AddActor(Constants.PLUMBER_GROUP, luigi);
         }
 
         private void AddScore(Cast cast)

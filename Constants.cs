@@ -55,6 +55,10 @@ namespace Unit06
         public static string RIGHT = "right";
         public static string UP = "up";
         public static string DOWN = "down";
+        public static string LEFT2 = "left";
+        public static string RIGHT2 = "right";
+        public static string UP2 = "up";
+        public static string DOWN2 = "down";
         public static string SPACE = "space";
         public static string ENTER = "enter";
         public static string PAUSE = "p";
@@ -113,13 +117,65 @@ namespace Unit06
         // MARIO
         public static string PLUMBER_GROUP = "plumbers";
 
-        public static List<string> MARIO_IMAGES
+        public static List<string> MARIO_IDLE
+            = new List<string>() {
+                "Assets/Images/mini_mario01.png"
+            };
+
+        public static List<string> MARIO_WALK
             = new List<string>() {
                 "Assets/Images/mini_mario01.png",
                 "Assets/Images/mini_mario02.png"
-                // "Assets/Images/guido01b.png"
-                // "Assets/Images/guido04.png"
             };
+
+        public static List<string> MARIO_JUMP
+            = new List<string>() {
+                "Assets/Images/mini_mario03.png"
+            };
+
+        public static List<string> MARIO_FALL
+            = new List<string>() {
+                "Assets/Images/mini_mario04.png"
+            };
+
+        public static List<string> MARIO_DUCK
+            = new List<string>() {
+                "Assets/Images/mini_mario05.png"
+            };
+        public static List<string> MARIO_IDLE_L
+            = new List<string>() {
+                "Assets/Images/mini_mario07.png"
+            };
+
+        public static List<string> MARIO_WALK_L
+            = new List<string>() {
+                "Assets/Images/mini_mario07.png",
+                "Assets/Images/mini_mario09.png"
+            };
+
+        public static List<string> MARIO_JUMP_L
+            = new List<string>() {
+                "Assets/Images/mini_mario10.png"
+            };
+
+        public static List<string> MARIO_FALL_L
+            = new List<string>() {
+                "Assets/Images/mini_mario11.png"
+            };
+
+        public static List<string> MARIO_DUCK_L
+            = new List<string>() {
+                "Assets/Images/mini_mario12.png"
+            };
+
+        public static List<string> MARIO_SPIN
+            = new List<string>() {
+                "Assets/Images/mini_mario01.png",
+                "Assets/Images/mini_mario06.png",
+                "Assets/Images/mini_mario07.png",
+                "Assets/Images/mini_mario08.png"
+            };
+
         public static List<string> LUIGI_IMAGES
             = new List<string>() {
                 "Assets/Images/Weegee01.png",
@@ -130,7 +186,7 @@ namespace Unit06
 
         public static int PLUMBER_WIDTH = 32;
         public static int PLUMBER_HEIGHT = 50;
-        public static int PLUMBER_RATE = 20;
+        public static int PLUMBER_RATE = 4;
         public static int PLUMBER_SPEED = 10;
         public static int PLUMBER_JUMP = 5;
 
@@ -143,31 +199,50 @@ namespace Unit06
                 //null space, Void
                 { "v", new List<string>() {
                     "Assets/Images/block50.png"
-                } },
+                    }
+                },
                 //Ground
                 { "g", new List<string>() {
-                    "Assets/Images/block30.png"
-                } },
-                //Blocks
+                    "Assets/Images/block31.png"
+                    }
+                },
+                //? Blocks
                 { "b", new List<string>() {
-                    "Assets/Images/block01.png",
-                } },
+                    "Assets/Images/block15.00.png",
+                    "Assets/Images/block15.01.png",
+                    "Assets/Images/block15.02.png",
+                    "Assets/Images/block15.03.png",
+                    "Assets/Images/block15.04.png",
+                    "Assets/Images/block15.05.png",
+                    "Assets/Images/block15.06.png",
+                    "Assets/Images/block15.07.png",
+                    "Assets/Images/block15.08.png",
+                    "Assets/Images/block15.09.png",
+                    "Assets/Images/block15.10.png",
+                    "Assets/Images/block15.11.png",
+                    "Assets/Images/block15.12.png",
+                    }
+                },
                 //bRicks
                 { "r", new List<string>() {
                     "Assets/Images/bricks.png"
-                } },
+                    }
+                },
                 //Stone blocks
                 { "s", new List<string>() {
                     "Assets/Images/stoneBlock01.png"
-                } },
+                    }
+                },
                 //Pipes
                 { "p", new List<string>() {
                     "Assets/Images/pipe01.png"
-                } },
+                    }
+                },
                 //invisible block for Detection
                 { "d", new List<string>() {
                     "Assets/Images/pipe00.png"
-                } }
+                    }
+                }
         };
 
         public static int BRICK_WIDTH = 50;
