@@ -175,14 +175,65 @@ namespace Unit06
                 "Assets/Images/mini_mario07.png",
                 "Assets/Images/mini_mario08.png"
             };
+        public static List<string> LUIGI_IDLE
+            = new List<string>() {
+                "Assets/Images/mini_luigi01.png"
+            };
 
-        public static List<string> LUIGI_IMAGES
+        public static List<string> LUIGI_WALK
+            = new List<string>() {
+                "Assets/Images/mini_luigi01.png",
+                "Assets/Images/mini_luigi02.png"
+            };
+
+        public static List<string> LUIGI_JUMP
+            = new List<string>() {
+                "Assets/Images/mini_mario03.png"
+            };
+
+        public static List<string> LUIGI_FALL
+            = new List<string>() {
+                "Assets/Images/mini_mario04.png"
+            };
+
+        public static List<string> LUIGI_DUCK
+            = new List<string>() {
+                "Assets/Images/Weegee05.png"
+            };
+        public static List<string> LUIGI_IDLE_L
+            = new List<string>() {
+                "Assets/Images/Weegee07.png"
+            };
+
+        public static List<string> LUIGI_WALK_L
+            = new List<string>() {
+                "Assets/Images/Weegee07.png",
+                "Assets/Images/Weegee09.png"
+            };
+
+        public static List<string> LUIGI_JUMP_L
+            = new List<string>() {
+                "Assets/Images/Weegee10.png"
+            };
+
+        public static List<string> LUIGI_FALL_L
+            = new List<string>() {
+                "Assets/Images/Weegee11.png"
+            };
+
+        public static List<string> LUIGI_DUCK_L
+            = new List<string>() {
+                "Assets/Images/Weegee12.png"
+            };
+
+        public static List<string> LUIGI_SPIN
             = new List<string>() {
                 "Assets/Images/Weegee01.png",
-                "Assets/Images/Weegee02.png"
-                // "Assets/Images/guido01b.png"
-                // "Assets/Images/guido04.png"
+                "Assets/Images/mini_Weegee06.png",
+                "Assets/Images/mini_Weegee07.png",
+                "Assets/Images/mini_Weegee08.png"
             };
+
 
         public static int PLUMBER_WIDTH = 32;
         public static int PLUMBER_HEIGHT = 50;
@@ -210,15 +261,12 @@ namespace Unit06
                 { "b", new List<string>() {
                     "Assets/Images/block15.00.png",
                     "Assets/Images/block15.01.png",
-                    "Assets/Images/block15.02.png",
                     "Assets/Images/block15.03.png",
                     "Assets/Images/block15.04.png",
                     "Assets/Images/block15.05.png",
-                    "Assets/Images/block15.06.png",
                     "Assets/Images/block15.07.png",
                     "Assets/Images/block15.08.png",
                     "Assets/Images/block15.09.png",
-                    "Assets/Images/block15.10.png",
                     "Assets/Images/block15.11.png",
                     "Assets/Images/block15.12.png",
                     }
@@ -240,7 +288,7 @@ namespace Unit06
                 },
                 //invisible block for Detection
                 { "d", new List<string>() {
-                    "Assets/Images/pipe00.png"
+                    "Assets/Images/pipe61.png"
                     }
                 }
         };

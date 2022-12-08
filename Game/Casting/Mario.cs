@@ -18,23 +18,44 @@ namespace Unit06.Game.Casting
         /// <summary>
         /// Constructs our instance of Mario
         /// </summary>
-        public Mario(Body body, string plumber_ID, bool debug) : base(debug)
+        public Mario(Body body, bool plumber_ID, bool debug) : base(debug)
         {
-            Animation idle = new Animation(Constants.MARIO_IDLE, Constants.PLUMBER_RATE, 1);
-            Animation walking = new Animation(Constants.MARIO_WALK, Constants.PLUMBER_RATE, 1);
-            Animation jumping = new Animation(Constants.MARIO_JUMP, Constants.PLUMBER_RATE, 1);
-            Animation falling = new Animation(Constants.MARIO_FALL, Constants.PLUMBER_RATE, 1);
-            Animation ducking = new Animation(Constants.MARIO_DUCK, Constants.PLUMBER_RATE, 1);
-            Animation spinning = new Animation(Constants.MARIO_SPIN, Constants.PLUMBER_RATE, 1);
-            Animation idleL = new Animation(Constants.MARIO_IDLE_L, Constants.PLUMBER_RATE, 1);
-            Animation walkingL = new Animation(Constants.MARIO_WALK_L, Constants.PLUMBER_RATE, 1);
-            Animation jumpingL = new Animation(Constants.MARIO_JUMP_L, Constants.PLUMBER_RATE, 1);
-            Animation fallingL = new Animation(Constants.MARIO_FALL_L, Constants.PLUMBER_RATE, 1);
-            Animation duckingL = new Animation(Constants.MARIO_DUCK_L, Constants.PLUMBER_RATE, 1);
+
+            if (plumber_ID)
+            {
+                Animation idle = new Animation(Constants.MARIO_IDLE, Constants.PLUMBER_RATE, 1);
+                Animation walking = new Animation(Constants.MARIO_WALK, Constants.PLUMBER_RATE, 1);
+                Animation jumping = new Animation(Constants.MARIO_JUMP, Constants.PLUMBER_RATE, 1);
+                Animation falling = new Animation(Constants.MARIO_FALL, Constants.PLUMBER_RATE, 1);
+                Animation ducking = new Animation(Constants.MARIO_DUCK, Constants.PLUMBER_RATE, 1);
+                Animation spinning = new Animation(Constants.MARIO_SPIN, Constants.PLUMBER_RATE, 1);
+                Animation idleL = new Animation(Constants.MARIO_IDLE_L, Constants.PLUMBER_RATE, 1);
+                Animation walkingL = new Animation(Constants.MARIO_WALK_L, Constants.PLUMBER_RATE, 1);
+                Animation jumpingL = new Animation(Constants.MARIO_JUMP_L, Constants.PLUMBER_RATE, 1);
+                Animation fallingL = new Animation(Constants.MARIO_FALL_L, Constants.PLUMBER_RATE, 1);
+                Animation duckingL = new Animation(Constants.MARIO_DUCK_L, Constants.PLUMBER_RATE, 1);
+                this._animationsList = new List<Animation> { idle, walking, jumping, falling, ducking, spinning, idleL, walkingL, jumpingL, fallingL, duckingL };
+                this._animation = _animationsList[0];
+            }
+            else
+            {
+                Animation idle = new Animation(Constants.LUIGI_IDLE, Constants.PLUMBER_RATE, 1);
+                Animation walking = new Animation(Constants.LUIGI_WALK, Constants.PLUMBER_RATE, 1);
+                Animation jumping = new Animation(Constants.LUIGI_JUMP, Constants.PLUMBER_RATE, 1);
+                Animation falling = new Animation(Constants.LUIGI_FALL, Constants.PLUMBER_RATE, 1);
+                Animation ducking = new Animation(Constants.LUIGI_DUCK, Constants.PLUMBER_RATE, 1);
+                Animation spinning = new Animation(Constants.LUIGI_SPIN, Constants.PLUMBER_RATE, 1);
+                Animation idleL = new Animation(Constants.LUIGI_IDLE_L, Constants.PLUMBER_RATE, 1);
+                Animation walkingL = new Animation(Constants.LUIGI_WALK_L, Constants.PLUMBER_RATE, 1);
+                Animation jumpingL = new Animation(Constants.LUIGI_JUMP_L, Constants.PLUMBER_RATE, 1);
+                Animation fallingL = new Animation(Constants.LUIGI_FALL_L, Constants.PLUMBER_RATE, 1);
+                Animation duckingL = new Animation(Constants.LUIGI_DUCK_L, Constants.PLUMBER_RATE, 1);
+                this._animationsList = new List<Animation> { idle, walking, jumping, falling, ducking, spinning, idleL, walkingL, jumpingL, fallingL, duckingL };
+                this._animation = _animationsList[0];
+            }
             this._body = body;
-            this._animation = idle;
             this._isIdle = 0;
-            this._animationsList = new List<Animation> { idle, walking, jumping, falling, ducking, spinning, idleL, walkingL, jumpingL, fallingL, duckingL };
+
         }
 
         /// <summary>

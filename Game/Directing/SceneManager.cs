@@ -249,16 +249,17 @@ namespace Unit06.Game.Directing
 
             Body body = new Body(position, size, velocity);
             // Animation animation = new Animation(Constants.MARIO_IMAGES, Constants.PLUMBER_RATE, 0);
-            string plumber_ID = "mario";
-            Mario mario = new Mario(body, plumber_ID, false);
+            // bool plumber_ID = true;
+            Mario mario = new Mario(body, true, false);
 
             cast.AddActor(Constants.PLUMBER_GROUP, mario);
 
-            // Body body = new Body(position, size, velocity);
-            // Animation animation = new Animation(Constants.LUIGI_IMAGES, Constants.PLUMBER_RATE, 0);
-            // Mario luigi = new Mario(body, animation, false);
 
-            // cast.AddActor(Constants.PLUMBER_GROUP, luigi);
+            body = new Body(position, size, velocity);
+            // Animation animation = new Animation(Constants.LUIGI_IMAGES, Constants.PLUMBER_RATE, 0);
+            Mario luigi = new Mario(body, false, false);
+
+            cast.AddActor(Constants.PLUMBER_GROUP, luigi);
         }
 
         private void AddScore(Cast cast)
