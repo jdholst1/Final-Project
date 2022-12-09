@@ -18,45 +18,49 @@ namespace Unit06.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Mario mario = (Mario)cast.GetFirstActor(Constants.PLUMBER_GROUP);
-            List<Actor> bricks = cast.GetActors(Constants.BRICK_GROUP);
-            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-
-            foreach (Actor actor in bricks)
+            List<Actor> plumbers = cast.GetActors(Constants.PLUMBER_GROUP);
+            foreach (Mario mario in plumbers)
             {
-                Brick brick = (Brick)actor;
-                Body brickBody = brick.GetBody();
-                Body plumberBody = mario.GetBody();
+                // Mario mario = (Mario)cast.GetFirstActor(Constants.PLUMBER_GROUP);
+                List<Actor> bricks = cast.GetActors(Constants.BRICK_GROUP);
+                Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
 
-                if (_physicsService.HasCollided(brickBody, plumberBody))
+                foreach (Actor actor in bricks)
                 {
+                    Brick brick = (Brick)actor;
+                    Body brickBody = brick.GetBody();
+                    Body plumberBody = mario.GetBody();
 
-                    int slope = 0;
+                    if (_physicsService.HasCollided(brickBody, plumberBody))
+                    {
 
-                    while (_physicsService.HasCollided(brickBody, plumberBody) && slope < 40)
-                    {
-                        slope++;
-                        mario.ShiftUp();
-                    }
-                    if (slope > 38)
-                    {
-                        mario.HitWall(slope);
-                        mario.StopMoving(true, false);
-                        mario.SetWall(true);
-                    }
-                    else
-                    {
-                        mario.StopMoving(false, true);
-                        if (!(mario.GetBody().GetVelocity().GetY() > 0))
+                        int slope = 0;
+
+                        while (_physicsService.HasCollided(brickBody, plumberBody) && slope < 40)
                         {
-                            mario.SetGrounded(0);
-                            mario.SetWall(false);
+                            slope++;
+                            mario.ShiftUp();
                         }
+                        if (slope > 38)
+                        {
+                            mario.HitWall(slope);
+                            mario.StopMoving(true, false);
+                            mario.SetWall(true);
+                        }
+                        else
+                        {
+                            mario.StopMoving(false, true);
+                            if (!(mario.GetBody().GetVelocity().GetY() > 0))
+                            {
+                                mario.SetGrounded(0);
+                                mario.SetWall(false);
+                            }
 
+                        }
+                        // int points = brick.GetPoints();
+                        // stats.AddPoints(points);
+                        // cast.RemoveActor(Constants.BRICK_GROUP, brick);
                     }
-                    // int points = brick.GetPoints();
-                    // stats.AddPoints(points);
-                    // cast.RemoveActor(Constants.BRICK_GROUP, brick);
                 }
             }
         }

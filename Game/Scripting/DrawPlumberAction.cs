@@ -15,22 +15,25 @@ namespace Unit06.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Mario mario = (Mario)cast.GetFirstActor(Constants.PLUMBER_GROUP);
-            Body body = mario.GetBody();
-
-            if (mario.IsDebug())
+            foreach (Mario mario in cast.GetActors(Constants.PLUMBER_GROUP))
             {
-                // mario.MoveNext();
-                Rectangle rectangle = body.GetRectangle();
-                Point size = rectangle.GetSize();
-                Point pos = rectangle.GetPosition();
-                _videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
-            }
+                // Mario mario = (Mario)cast.GetFirstActor(Constants.PLUMBER_GROUP);
+                Body body = mario.GetBody();
 
-            Animation animation = mario.GetAnimation();
-            Image image = animation.NextImage();
-            Point position = body.GetPosition();
-            _videoService.DrawImage(image, position);
+                if (mario.IsDebug())
+                {
+                    // mario.MoveNext();
+                    Rectangle rectangle = body.GetRectangle();
+                    Point size = rectangle.GetSize();
+                    Point pos = rectangle.GetPosition();
+                    _videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
+                }
+
+                Animation animation = mario.GetAnimation();
+                Image image = animation.NextImage();
+                Point position = body.GetPosition();
+                _videoService.DrawImage(image, position);
+            }
         }
     }
 }

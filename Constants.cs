@@ -55,10 +55,10 @@ namespace Unit06
         public static string RIGHT = "right";
         public static string UP = "up";
         public static string DOWN = "down";
-        public static string LEFT2 = "left";
-        public static string RIGHT2 = "right";
-        public static string UP2 = "up";
-        public static string DOWN2 = "down";
+        public static string LEFT2 = "a";
+        public static string RIGHT2 = "d";
+        public static string UP2 = "w";
+        public static string DOWN2 = "s";
         public static string SPACE = "space";
         public static string ENTER = "enter";
         public static string PAUSE = "p";
@@ -282,7 +282,7 @@ namespace Unit06
                 },
                 //Pipes
                 { "p", new List<string>() {
-                    "Assets/Images/pipe61.png"
+                    "Assets/Images/pipe01.png"
                     }
                 },
                 //invisible block for Detection
