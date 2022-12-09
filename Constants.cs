@@ -177,23 +177,23 @@ namespace Unit06
             };
         public static List<string> LUIGI_IDLE
             = new List<string>() {
-                "Assets/Images/mini_luigi01.png"
+                "Assets/Images/Weegee01.png"
             };
 
         public static List<string> LUIGI_WALK
             = new List<string>() {
-                "Assets/Images/mini_luigi01.png",
-                "Assets/Images/mini_luigi02.png"
+                "Assets/Images/Weegee01.png",
+                "Assets/Images/Weegee02.png"
             };
 
         public static List<string> LUIGI_JUMP
             = new List<string>() {
-                "Assets/Images/mini_mario03.png"
+                "Assets/Images/Weegee03.png"
             };
 
         public static List<string> LUIGI_FALL
             = new List<string>() {
-                "Assets/Images/mini_mario04.png"
+                "Assets/Images/Weegee04.png"
             };
 
         public static List<string> LUIGI_DUCK
