@@ -39,6 +39,8 @@ namespace Unit06.Game.Scripting
             else if (_keyboardService.IsKeyDown(Constants.UP) && (mario.GetWall()))
             {
                 mario.WallKick(side);
+                Sound sound = new Sound(Constants.WALLKICK_SOUND);
+                _audioService.PlaySound(sound);
             }
             mario.StopMoving(false, false);
             mario.Fall();
@@ -68,6 +70,8 @@ namespace Unit06.Game.Scripting
             else if (_keyboardService.IsKeyDown(Constants.UP2) && (luigi.GetWall()))
             {
                 luigi.WallKick(side);
+                Sound sound = new Sound(Constants.WALLKICK_SOUND);
+                _audioService.PlaySound(sound);
             }
             luigi.StopMoving(false, false);
             luigi.Fall();

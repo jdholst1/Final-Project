@@ -34,6 +34,7 @@ namespace Unit06
         public static string BOUNCE_SOUND = "Assets/Sounds/smw_jump.wav";
         public static string WELCOME_SOUND = "Assets/Sounds/start.wav";
         public static string OVER_SOUND = "Assets/Sounds/over.wav";
+        public static string WALLKICK_SOUND = "Assets/Sounds/smw_stomp_no_damage.wav";
 
         //MUSIC
         public static string MUSIC_TRACK_1 = "Assets/Sounds/16 Athletic.mp3";
